@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class CreditLimit {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Enter account number");
+        int account = input.nextInt();
+        System.out.print("Enter beginning balance");
+        int oldBalance = input.nextInt();
+        System.out.print("Enter total charges");
+        int charges = input.nextInt();
+      
+        System.out.print("Enter total credits");
+        int credits = input.nextInt();
+        System.out.print("Enter credit limit");
+        int limit = input.nextInt();
+      
+        int newBalance = oldBalance + charges - credits;
+        
+        System.out.println("New Balance is - " + newBalance);
+        
+        if (newBalance > limit) {
+            System.out.println("Credits limit exceeded");
+        }
+    }
+}
