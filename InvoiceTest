@@ -1,0 +1,78 @@
+class Invoice {
+    String partNumber;
+    String partDescription;
+    int quantity;
+    double pricePerItem;
+
+    public Invoice(String num, String desc, int qty, double price) {
+        partNumber = num;
+        partDescription = desc;
+        
+        if (qty > 0) {
+            quantity = qty;
+        } else {
+            quantity = 0;
+        }
+        
+        if (price > 0.0) {
+            pricePerItem = price;
+        } else {
+            pricePerItem = 0.0;
+        }
+    }
+
+    public void setPartNumber(String num) {
+        partNumber = num;
+    }
+    
+    public String getPartNumber() {
+        return partNumber;
+    }
+
+    public void setPartDescription(String desc) {
+        partDescription = desc;
+    }
+
+    public String getPartDescription() {
+        return partDescription;
+    }
+
+    public void setQuantity(int qty) {
+        if (qty > 0) {
+            quantity = qty;
+        } else {
+            quantity = 0;
+        }
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setPricePerItem(double price) {
+        if (price > 0.0) {
+            pricePerItem = price;
+        } else {
+            pricePerItem = 0.0;
+        }
+    }
+
+    public double getPricePerItem() {
+        return pricePerItem;
+    }
+
+    public double getInvoiceAmount() {
+        return quantity * pricePerItem;
+    }
+}
+
+public class InvoiceTest {
+    public static void main(String[] args) {
+        Invoice item1 = new Invoice("1234", "Hammer", 2, 15.50);
+        Invoice item2 = new Invoice("5678", "book", -5, 0.05); 
+
+        System.out.println("Item 1 amount: " + item1.getInvoiceAmount());
+        System.out.println("Item 2 quantity (should be 0): " + item2.getQuantity());
+        System.out.println("Item 2 amount: " + item2.getInvoiceAmount());
+    }
+}
