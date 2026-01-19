@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class CompareNumbers {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        
+        System.out.print("Enter first number: ");
+        int n1 = s.nextInt();
+        
+        System.out.print("Enter second number: ");
+        int n2 = s.nextInt();
+        
+        if (n1 > n2) {
+            System.out.println(n1 + " is larger");
+        }
+        
+        if (n2 > n1) {
+            System.out.println(n2 + " is larger");
+        }
+        
+        if (n1 == n2) {
+            System.out.println("the numbers is equal");
+        }
+    }
+}
