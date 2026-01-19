@@ -1,0 +1,56 @@
+class Employee {
+    String firstName;
+    String lastName;
+    double monthlySalary;
+
+    public Employee(String first, String last, double salary) {
+        firstName = first;
+        lastName = last;
+        if (salary > 0) {
+            monthlySalary = salary;
+        }
+    }
+
+    public void setFirstName(String first) {
+        firstName = first;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setLastName(String last) {
+        lastName = last;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setMonthlySalary(double salary) {
+        if (salary > 0) {
+            monthlySalary = salary;
+        }
+    }
+
+    public double getMonthlySalary() {
+        return monthlySalary;
+    }
+}
+
+public class EmployeeTest {
+    public static void main(String[] args){
+
+    Employee e1 = new Employee("Faizan","kadu",50000);
+    Employee e2=new Employee("Ehsan","Gates",90000);
+    System.out.println("salary 1: "+e1.getMsalary()*12);
+    System.out.println("salary 2: "+e2.getMsalary()*12);
+    System.out.println("addig 10 percent");
+
+    e1.setMsalary(e1.getMsalary()*1.1);
+    e2.setMsalary(e2.getMsalary()*1.1);
+    System.out.println("new salary 1: "+ e1.getMsalary()*12);
+
+    System.out.println("new salary 2: "+e2.getMsalary()*12);
+    }
+}
