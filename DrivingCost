@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class DrivingCost {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Enter total miles driven per day");
+        double miles = input.nextDouble();
+        
+        System.out.print("Enter cost per gallon of gasoline");
+        double cpg = input.nextDouble();
+        
+        System.out.print("Enter average miles per gallon");
+        double mpg = input.nextDouble();
+        
+        System.out.print("Enter average fees per day");
+        double fees = input.nextDouble();
+        
+        System.out.print("Enter tolls per");
+        double tolls = input.nextDouble();
+        
+        double gasCost = (miles / mpg) * cpg;
+        double total = gasCost + fees + tolls;
+        
+        System.out.println("You cost is " + total);
+    }
+}
