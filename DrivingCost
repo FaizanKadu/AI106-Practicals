@@ -10,7 +10,7 @@ public class DrivingCost {
         System.out.print("Enter cost per gallon of gasoline");
         double cpg = input.nextDouble();
         
-        System.out.print("Enter average miles per gallon");
+        System.out.print("Enter milage");
         double mpg = input.nextDouble();
         
         System.out.print("Enter average fees per day");
