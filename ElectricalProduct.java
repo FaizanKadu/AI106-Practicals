@@ -1,39 +1,54 @@
+import java.util.Scanner;
 class Product {
-    int pid;
+    int productID;
     String name;
-    int cid;
-    double price;
+    int categoryID;
+    double unitPrice;
 
-    Product(int id, String n, int c, double p) {
-        pid = id;
-        name = n;
-        cid = c;
-        price = p;
+    Product(int productID, String name, int categoryID, double unitPrice) {
+        this.productID = productID;
+        this.name = name;
+        this.categoryID = categoryID;
+        this.unitPrice = unitPrice;
     }
 }
 
-class ElectricalProduct extends Product {
-    String vrange;
-    int watt;
+public class ElectricalProduct extends Product {
+    String voltageRange;
+    int wattage;
 
-    ElectricalProduct(int id, String n, int c, double p, String v, int w) {
-        super(id, n, c, p);
-        vrange = v;
-        watt = w;
+    ElectricalProduct(int productID, String name, int categoryID,
+                      double unitPrice, String voltageRange, int wattage) {
+        super(productID, name, categoryID, unitPrice);
+        this.voltageRange = voltageRange;
+        this.wattage = wattage;
     }
 
-    void update(int w, double p) {
-        watt = w;
-        price = p;
+    void updateDetails(int newWattage, double newPrice) {
+        this.wattage = newWattage;
+        this.unitPrice = newPrice;
     }
 
-    void show() {
-        System.out.println(name + " " + watt + "W " + vrange + " Price " + price);
+    void display() {
+        System.out.println("Product ID: " + productID);
+        System.out.println("Name: " + name);
+        System.out.println("Category ID: " + categoryID);
+        System.out.println("Unit Price: " + unitPrice);
+        System.out.println("Voltage Range: " + voltageRange);
+        System.out.println("Wattage: " + wattage);
     }
 
-    public static void main(String args[]) {
-        ElectricalProduct e = new ElectricalProduct(1, "Fan", 101, 2000, "220V", 50);
-        e.update(60, 2500);
-        e.show();
+    public static void main(String[] args) {
+        ElectricalProduct ep = new ElectricalProduct(101, "Heater", 5, 2500, "220-240V", 1000);
+        System.out.println("BEFORE UPDATION");
+        ep.display();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter new wattage and new price respectively to be updated.");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        ep.updateDetails(a,b);
+        System.out.println("AFTER UPDATION");
+        ep.display();
     }
 }
+
